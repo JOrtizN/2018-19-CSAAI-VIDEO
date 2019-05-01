@@ -3,8 +3,11 @@ function main()
   console.log("Probando...")
   d = document.getElementById('display1')
   video1 = document.getElementById('video1')
+  video1.src = "circo.mp4"
   video2 = document.getElementById("video2")
+  video2.src = "https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
   video3 = document.getElementById("video3")
+  video3.src = "piano.mp4"
   play = document.getElementById("play")
 //-- Establecer el tamaño del vídeo
   video1.width = 200;
@@ -62,10 +65,11 @@ function main()
   ver1 = document.getElementById('play1')
   ver1.onclick = () => {
     console.log("Ver!")
-    v.src = "circo.mp4"
+    v.src = video1.src
     v.currentTime = video1.currentTime;
     hora = setInterval(hora, 100);
-  }
+    borde();
+    }
    //-- Boton de Play
  ver2 = document.getElementById('play2')
 
@@ -73,9 +77,10 @@ function main()
  ver2.onclick = () => {
    console.log("Ver!")
   //-- Indicar la fuente del vídeo
-  v.src ="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
+  v.src = video2.src
   v.currentTime = video2.currentTime;
   hora = setInterval(hora, 100);
+  borde();
   }
    //-- Boton de Play
  ver3 = document.getElementById('play3')
@@ -84,9 +89,10 @@ function main()
  ver3.onclick = () => {
    console.log("Ver!")
   //-- Indicar la fuente del vídeo
-  v.src ="piano.mp4"
+  v.src = video3.src
   v.currentTime = video3.currentTime;
   hora = setInterval(hora, 100);
+  borde();
   }
 
   t = document.getElementById('time')
@@ -98,5 +104,24 @@ function main()
     time = h + ":" + m + ":" + s;
     t.innerHTML = time;
   }
-
+  function borde() {
+    if (v.src == video1.src){
+      video1.style.borderWidth = "thick";
+      video2.style.borderWidth = "thin";
+      video3.style.borderWidth = "thin";
+    }
+    else if (v.src == video2.src) {
+      video2.style.borderWidth = "thick";
+      video1.style.borderWidth = "thin";
+      video3.style.borderWidth = "thin";
+    }
+    else if (v.src == video3.src) {
+      video3.style.borderWidth = "thick";
+      video2.style.borderWidth = "thin";
+      video1.style.borderWidth = "thin";
+    }
+    else {
+      console.log("estará empezando");
+    }
+  }
 }

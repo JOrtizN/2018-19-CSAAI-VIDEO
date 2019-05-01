@@ -22,3 +22,7 @@ body{
   width: 700px;
   height: 1075px;
 }
+video{
+  margin: 0 auto;
+	border: 1px outset #ddd;
+}
