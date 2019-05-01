@@ -5,6 +5,7 @@ function main()
   video1 = document.getElementById('video1')
   video2 = document.getElementById("video2")
   video3 = document.getElementById("video3")
+  play = document.getElementById("play")
 //-- Establecer el tamaño del vídeo
   video1.width = 200;
   video1.height= 100;
@@ -13,6 +14,8 @@ function main()
   video3.width = 200;
   video3.height= 100;
 
+  play.onclick = () => {
+    console.log("Comenzamos!")}
 
   video1.onmouseover = () => {
     console.log("Mouse over video1!!")
@@ -56,23 +59,23 @@ function main()
   v.height= 300;
 
 
-
   ver1 = document.getElementById('play1')
   ver1.onclick = () => {
     console.log("Ver!")
     v.src = "circo.mp4"
-    v.currentTime = video1.currentTime
-}
+    v.currentTime = video1.currentTime;
+    hora = setInterval(hora, 100);
+  }
    //-- Boton de Play
  ver2 = document.getElementById('play2')
 
  //-- Al apretar el boton de ver video
  ver2.onclick = () => {
    console.log("Ver!")
-
   //-- Indicar la fuente del vídeo
   v.src ="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"
-  v.currentTime = video2.currentTime
+  v.currentTime = video2.currentTime;
+  hora = setInterval(hora, 100);
   }
    //-- Boton de Play
  ver3 = document.getElementById('play3')
@@ -80,9 +83,20 @@ function main()
  //-- Al apretar el boton de ver video
  ver3.onclick = () => {
    console.log("Ver!")
-
   //-- Indicar la fuente del vídeo
   v.src ="piano.mp4"
-  v.currentTime = video3.currentTime
-}
+  v.currentTime = video3.currentTime;
+  hora = setInterval(hora, 100);
+  }
+
+  t = document.getElementById('time')
+  function hora() {
+    vtime = v.currentTime;
+    h = Math.floor( vtime / 3600 );
+    m = Math.floor( (vtime % 3600) / 60 );
+    s = Math.floor(vtime % 60);
+    time = h + ":" + m + ":" + s;
+    t.innerHTML = time;
+  }
+
 }

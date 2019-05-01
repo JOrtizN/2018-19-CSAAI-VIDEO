@@ -1,0 +1,24 @@
+.Botones{
+  width: 700px;
+  text-align: center;
+  column-count: 3;
+  column-rule-color: pink;
+  column-rule-style: double;
+  column-rule-width: medium;
+}
+.play{
+  border: 5px solid #dedede;
+  color: #444;
+  height: 75px;
+  width: 700px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: normal;
+}
+body{
+  text-align: center;
+  align-items: center;
+  background-color: lightpink;
+  width: 700px;
+  height: 1075px;
+}

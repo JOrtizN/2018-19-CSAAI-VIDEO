@@ -3,22 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>Mouse 01</title>
+    <link rel="stylesheet" href="video.css">
     <script src="mouse-01.js"></script>
   </head>
   <body onload="main();">
-    <p id="display1">Ver en grande</p>
-    <video id="display" autoplay loop muted poster="color-blanco.png"></video>
-    <p>Elige el video</p>
+    <button type="button" id="play" class="play">MODO REALIZADOR</button>
+    <p id="display1">SALIDA:</p>
+    <video id="display" autoplay loop muted poster="tele.mp4"></video>
+    <p id="time">00:00:00</p>
+    <p>Elige el video que quiere mostrar en la SALIDA</p>
     <br>
-    <video id="video1" autoplay loop muted>
-      <source src="circo.mp4"></video>
-    <video id="video2" autoplay loop muted>
-      <source src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"></video>
-    <video id="video3" autoplay loop muted>
-      <source src="piano.mp4"></video>
-    <br>
-    <button type="button" id="play1">VER VIDEO1</button>
-    <button type="button" id="play2">VER VIDEO2</button>
-    <button type="button" id="play3">VER VIDEO3</button>
+    <div class="Botones">
+      <video id="video1" autoplay loop muted controls>
+        <source src="circo.mp4"></video>
+      <br>
+      <button type="button" id="play1">VER</button>
+      <p>VIDEO 1</p>
+      <video id="video2" autoplay loop muted controls>
+        <source src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4"></video>
+      <br>
+      <button type="button" id="play2">VER</button>
+      <p>VIDEO 2</p>
+      <video id="video3" autoplay loop muted controls>
+        <source src="piano.mp4"></video>
+      <br>
+      <button type="button" id="play3">VER</button>
+      <p>VIDEO 3</p>
+    </div>
   </body>
 </html>
